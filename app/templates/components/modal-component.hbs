@@ -1,0 +1,20 @@
+{{#if isActive "true"}}
+<div id="modal-ter" class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">{{model.name}} - {{model.daily_rate}}</p>
+            <button class="delete" {{action "closeModal"}}></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="content">
+                {{yield}}
+            </div>
+        </section>
+        <footer class="modal-card-foot">
+            <a class="button is-success" {{action "save" model}}>Book Now</a>
+            <a class="button" {{action "closeModal"}}>Cancel</a>
+        </footer>
+    </div>
+</div>
+{{/if}}

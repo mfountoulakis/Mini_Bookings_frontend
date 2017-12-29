@@ -1,5 +1,6 @@
 {
   "name": "mini-bookings-frontend",
   "dependencies": {
+    "moment-range": "^2.2.0"
   }
 }

@@ -1,0 +1,56 @@
+ {{#modal-component model=model.rental isActive="true" action="save" transitionOut="transitionOut"}} {{!-- {{outlet}} --}}
+<div class="columns">
+  <div class="column is-half">
+    {{#power-calendar-ranges onCenterChange=(action (mut center) value="date") class="demo-range-calendar-with-pretty-range-ends-yo"
+    onchange=(action "rangeChange") action="rangeChange" center=center selected=range minRange=0 onSelect=(action (mut range)
+    value="moment") as |calendar|}} {{calendar.nav}} {{calendar.days disabledDates=disabledDates}} {{/power-calendar-ranges}}
+  </div>
+
+  <div class="column is-half">
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+        {{input classBinding="errors.clientEmail:is-danger" class="input" placeholder="example@gmail.com" value=model.clientEmail }}
+        <span class="icon is-small is-left">
+          <i class="fa fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fa fa-check"></i>
+        </span>
+        {{#each model.errors.clientEmail as |error|}}
+        <p class="help {{if isDanger " is-danger "}}">Email {{error.message}}.</p>
+        {{/each}}
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Start Date</label>
+      <div class="control">
+        {{input classBinding="errors.start:is-danger" placeholder="start date" readonly=true value=model.start class="input"}}
+      </div>
+      {{#each model.errors.start as |error|}}
+      <p class="help {{if isDanger " is-danger "}}">Start date {{error.message}}.</p>
+      {{/each}}
+    </div>
+
+    <div class="field">
+      <label class="label">End Date</label>
+      <div class="control">
+        {{input classBinding="errors.end:is-danger" placeholder="end date" readonly=true value=model.end class="input"}}
+      </div>
+      {{#each model.errors.end as |error|}}
+      <p class="help {{if isDanger " is-danger "}}">End Date {{error.message}}.</p>
+      {{/each}}
+    </div>
+
+    <div class="field">
+      <label class="label">Price</label>
+      <div class="control">
+        {{input classBinding="errors.end:is-danger" readonly=true value=model.rate class="input"}}
+      </div>
+      {{#each model.errors.rate as |error|}}
+      <p class="help {{if isDanger " is-danger "}}">Price {{error.message}}.</p>
+      {{/each}}
+    </div>
+  </div>
+</div>
+{{/modal-component}}

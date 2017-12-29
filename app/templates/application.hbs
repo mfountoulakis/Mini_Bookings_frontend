@@ -1,5 +1,63 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+ {{#each flashMessages.queue as |flash|}} {{#flash-message flash=flash as |component flash close|}} {{#if
+flash.content}}
 
-{{outlet}}
+<div class="notification is-danger">
+    <button class="delete"></button>
+    {{flash.message}}
+</div>
+
+{{else}}
+
+<div class="notification is-success">
+    <button class="delete"></button>
+    {{flash.message}}
+</div>
+
+{{/if}} {{/flash-message}} {{/each}}
+
+<section class="section">
+    {{outlet}}
+
+    <div class="container">
+        <div class="columns is-multiline">
+            {{#each model as |rental|}}
+            <div class="column is-one-quarter-desktop">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src={{rental.image}} alt="Placeholder image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src={{rental.image}} alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">{{rental.name}} ${{rental.daily_rate}}</p>
+                                <p class="subtitle is-6">{{rental.formatted_date}} </p>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                            <a>@bulmaio</a>.
+                            <a href="#">#css</a>
+                            <a href="#">#responsive</a>
+                            <br>
+                            <div class="buttons is-right">
+                                {{#link-to "bookings.new" rental.id}}
+                                <a class="button is-primary is-right">Book Now</a>
+                                {{/link-to}}
+                            </div>
+                            <time datetime>{{moment-format rental.created_at 'MM/DD/YYYY'}}</time>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>

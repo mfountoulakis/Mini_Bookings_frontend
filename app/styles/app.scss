@@ -1,0 +1,15 @@
+@import "ember-power-calendar";
+
+$primary-color: #0078c9;
+
+html {
+    background-color: grayscale($color: #f7f7f7) !important
+}
+
+.ember-power-calendar {
+    @include ember-power-calendar(
+        $cell-size: 40px, 
+        $day-today-color: pink,
+        $day-range-bookend-color: lighten($primary-color, 40%)
+        )
+}
