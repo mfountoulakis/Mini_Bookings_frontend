@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.JSONAPIAdapter.extend({
-  namespace: 'api/v1',
+  namespace: config.API_NAMESPACE,
   host: config.API_HOST
 });
 
