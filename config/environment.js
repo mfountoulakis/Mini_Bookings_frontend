@@ -27,7 +27,7 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
-
+      ENV.API_HOST = "http://localhost:3000"
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -50,6 +50,10 @@ module.exports = function (environment) {
     ENV['ember-faker'] = {
       enabled: true
     };
+
+    ENV.API_HOST = "https://bookingsync-backend.herokuapp.com/"
+    ENV.API_NAMESPACE = "api/v1"
+
   }
 
   return ENV;
