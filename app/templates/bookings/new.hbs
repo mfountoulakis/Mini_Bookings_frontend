@@ -35,7 +35,7 @@
     <div class="field">
       <label class="label">End Date</label>
       <div class="control">
-        {{input classBinding="errors.end:is-danger" placeholder="end date" readonly=true value=model.end class="input"}}
+        {{input classBinding="errors.end:is-danger" placeholder="end date" readonly=true value=model.start class="input"}}
       </div>
       {{#each model.errors.end as |error|}}
       <p class="help {{if isDanger " is-danger "}}">End Date {{error.message}}.</p>
