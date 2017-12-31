@@ -1,7 +1,8 @@
 # mini-bookings-frontend
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+An example calendar booking application and an Ember frontend for a small json api.
+
+working example: https://rocky-cove-73053.herokuapp.com
 
 ## Prerequisites
 
