@@ -2,7 +2,9 @@
 
 An example calendar booking application and an Ember frontend for a small json api.
 
-working example: https://rocky-cove-73053.herokuapp.com
+working example: https://rocky-cove-73053.herokuapp.com 
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/afe0ec2f0d2d405d9ec1a8b96326daab)](https://www.codacy.com/app/fountoulakismanos/Mini_Bookings_frontend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mfountoulakis/Mini_Bookings_frontend&amp;utm_campaign=Badge_Grade)
 
 ## Prerequisites
 
